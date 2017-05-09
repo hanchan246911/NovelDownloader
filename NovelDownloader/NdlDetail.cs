@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Data.SQLite;
+using System.Linq;
+using System.Xml.Linq;
 using System.Windows.Forms;
 
 namespace NovelDownloader
@@ -34,6 +36,18 @@ namespace NovelDownloader
                         subtitle.Regdate);
                 }
             }
+        }
+
+        private void btnSelectAll_Click(object sender, EventArgs e)
+        {
+            var dg = dataGridView1.Rows.Cast<DataGridViewRow>();
+            dg.AsEnumerable().Select(r => r.Cells["chkselect"].Value = true).ToList();
+        }
+
+        private void btnClearAll_Click(object sender, EventArgs e)
+        {
+            var dg = dataGridView1.Rows.Cast<DataGridViewRow>();
+            dg.AsEnumerable().Select(r => r.Cells["chkselect"].Value = false).ToList();
         }
     }
 }

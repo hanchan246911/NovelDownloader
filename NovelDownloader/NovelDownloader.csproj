@@ -84,6 +84,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="NdlDetail.ja.resx">
+      <DependentUpon>NdlDetail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NdlDetail.resx">
       <DependentUpon>NdlDetail.cs</DependentUpon>
     </EmbeddedResource>

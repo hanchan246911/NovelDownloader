@@ -39,6 +39,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.tsmiFile = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiFileRun = new System.Windows.Forms.ToolStripMenuItem();
+            this.textToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -65,6 +66,7 @@
             resources.ApplyResources(this.dataGridView1, "dataGridView1");
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // id
@@ -108,7 +110,8 @@
             // tsmiFile
             // 
             this.tsmiFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiFileRun});
+            this.tsmiFileRun,
+            this.textToolStripMenuItem});
             this.tsmiFile.Name = "tsmiFile";
             resources.ApplyResources(this.tsmiFile, "tsmiFile");
             // 
@@ -117,6 +120,12 @@
             this.tsmiFileRun.Name = "tsmiFileRun";
             resources.ApplyResources(this.tsmiFileRun, "tsmiFileRun");
             this.tsmiFileRun.Click += new System.EventHandler(this.tsmiFileRun_Click);
+            // 
+            // textToolStripMenuItem
+            // 
+            this.textToolStripMenuItem.Name = "textToolStripMenuItem";
+            resources.ApplyResources(this.textToolStripMenuItem, "textToolStripMenuItem");
+            this.textToolStripMenuItem.Click += new System.EventHandler(this.textToolStripMenuItem_Click);
             // 
             // NdlMain
             // 
@@ -147,6 +156,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn title;
         private System.Windows.Forms.DataGridViewTextBoxColumn writername;
         private System.Windows.Forms.DataGridViewButtonColumn detail;
+        private System.Windows.Forms.ToolStripMenuItem textToolStripMenuItem;
     }
 }
 

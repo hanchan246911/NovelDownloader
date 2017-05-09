@@ -4,6 +4,8 @@ using System.Data.SQLite;
 using System.Linq;
 using System.Windows.Forms;
 using NovelDownloader.Properties;
+using System.IO;
+using System.Text;
 
 namespace NovelDownloader
 {
@@ -97,5 +99,35 @@ namespace NovelDownloader
             }
         }
 
+        private void textToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (var aConnection = NdlDbMng.getConnection())
+            {
+                var novelid = NdlDbMng.getNovelId("n5084bv", aConnection);
+                var subtitle = NdlDbMng.getSubTitleById(novelid, 52);
+
+                var htmlDoc = new HtmlAgilityPack.HtmlDocument();
+                htmlDoc.LoadHtml(subtitle.Html);
+
+                var nodenovelp = htmlDoc.DocumentNode.SelectSingleNode(@"//div[@id=""novel_p""]");
+                var novelp = nodenovelp == null ? null : nodenovelp.InnerText;
+
+                var nodenovelh = htmlDoc.DocumentNode.SelectSingleNode(@"//div[@id=""novel_honbun""]");
+                var novelh = nodenovelh == null ? null : nodenovelh.InnerText;
+
+                var nodenovela = htmlDoc.DocumentNode.SelectSingleNode(@"//div[@id=""novel_a""]");
+                var novela = nodenovela == null ? null : nodenovela.InnerText;
+
+            }
+        }
+
+        private void writeFile()
+        {
+            var sw = new StreamWriter(@"C:\test\1.txt", false, Encoding.GetEncoding("shift_jis"));
+            //TextBox1.Textの内容を書き込む
+            sw.Write("");
+            //閉じる
+            sw.Close();
+        }
     }
 }

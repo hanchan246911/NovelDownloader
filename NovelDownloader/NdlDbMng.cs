@@ -14,19 +14,27 @@ namespace NovelDownloader
             var projectDirPath = createProjectDirPath();
             return Path.Combine(projectDirPath, "db", "ndl.db");
         }
- 
+
         static public string getConnectionString()
         {
-            var pathToDbFile = NdlDbMng.getDBPath();
+            return getConnectionString(NdlDbMng.getDBPath());
+        }
 
+        static public string getConnectionString(string path)
+        {
             var cns = new SQLiteConnectionStringBuilder
             {
-                DataSource = pathToDbFile,
-                //                Password = "0uJpcSjUxY3OHSeztGri4RUP1OIqw15D",
+                DataSource = path,
+                // Password = "0uJpcSjUxY3OHSeztGri4RUP1OIqw15D",
             };
             return cns.ToString();
         }
-
+ 
+        static public SQLiteConnection getConnection()
+        {
+            return new SQLiteConnection(getConnectionString());
+        }
+ 
         static public List<Novellist> getNovelListAll(SQLiteConnection aConnection)
         {
             using (var aConText = new DataContext(aConnection))
@@ -51,6 +59,29 @@ namespace NovelDownloader
                 return aQueryResult;
             }
         }
+
+        static public Subtitle getSubTitleById(int novelid, int id)
+        {
+            using (var aConnection = getConnection())
+            {
+                return getSubTitleById(novelid, id, aConnection);
+            }
+        }
+
+        static public Subtitle getSubTitleById(int novelid, int id, SQLiteConnection aConnection)
+        {
+            using (var aConText = new DataContext(aConnection))
+            {
+                var subtitles = aConText.GetTable<Subtitle>();
+                var aQueryResult =
+                        (from a in subtitles
+                         where a.Novelid == novelid
+                            && a.Id == id
+                         select a).ToList().FirstOrDefault();
+                return aQueryResult;
+            }
+        }
+
         static public int addNovelList(string ncode, string html, SQLiteConnection aConnection)
         {
             using (var aConText = new DataContext(aConnection))
@@ -108,6 +139,14 @@ namespace NovelDownloader
                     writername,
                     DateTime.Today.ToShortDateString() + " " + DateTime.Now.ToShortTimeString(),
                     id);
+            }
+        }
+
+        static public int getNovelId(string ncode)
+        {
+            using (var aConnection = getConnection())
+            {
+                return getNovelId(ncode, aConnection);
             }
         }
 
