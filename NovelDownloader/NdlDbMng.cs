@@ -35,6 +35,16 @@ namespace NovelDownloader
             return new SQLiteConnection(getConnectionString());
         }
  
+        static public DataContext getConttext()
+        {
+            return getConttext(getConnection());
+        }
+
+        static public DataContext getConttext(SQLiteConnection aConnection)
+        {
+            return new DataContext(aConnection);
+        }
+
         static public List<Novellist> getNovelListAll(SQLiteConnection aConnection)
         {
             using (var aConText = new DataContext(aConnection))

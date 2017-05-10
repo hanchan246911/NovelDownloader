@@ -101,33 +101,75 @@ namespace NovelDownloader
 
         private void textToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            using (var aConnection = NdlDbMng.getConnection())
+            var ncode = "n5084bv";
+
+            var filename = ncode + ".txt";
+            var dirpath = Path.Combine(createProjectDirPath(), "tmp");
+            if (!Directory.Exists(dirpath))
             {
-                var novelid = NdlDbMng.getNovelId("n5084bv", aConnection);
-                var subtitle = NdlDbMng.getSubTitleById(novelid, 52);
-
-                var htmlDoc = new HtmlAgilityPack.HtmlDocument();
-                htmlDoc.LoadHtml(subtitle.Html);
-
-                var nodenovelp = htmlDoc.DocumentNode.SelectSingleNode(@"//div[@id=""novel_p""]");
-                var novelp = nodenovelp == null ? null : nodenovelp.InnerText;
-
-                var nodenovelh = htmlDoc.DocumentNode.SelectSingleNode(@"//div[@id=""novel_honbun""]");
-                var novelh = nodenovelh == null ? null : nodenovelh.InnerText;
-
-                var nodenovela = htmlDoc.DocumentNode.SelectSingleNode(@"//div[@id=""novel_a""]");
-                var novela = nodenovela == null ? null : nodenovela.InnerText;
-
+                Directory.CreateDirectory(dirpath);
             }
+
+            var filepath = Path.Combine(dirpath, filename);
+            if (File.Exists(filepath))
+            {
+                File.Delete(filepath);
+            }
+
+            using (var sw = new StreamWriter(filepath, true, Encoding.GetEncoding("shift_jis")))
+            {
+                using (var aConnection = NdlDbMng.getConnection())
+                {
+                    var novelid = NdlDbMng.getNovelId(ncode, aConnection);
+                    var subtitles = NdlDbMng.getSubTitleByNovelId(novelid, aConnection);
+
+                    foreach (var subtitle in subtitles)
+                    {
+                        if (!subtitle.Output)
+                            continue;
+
+                        var htmlDoc = new HtmlAgilityPack.HtmlDocument();
+                        htmlDoc.LoadHtml(subtitle.Html);
+
+                        sw.Write(subtitle.Title);
+
+                        var nodenovelp = htmlDoc.DocumentNode.SelectSingleNode(@"//div[@id=""novel_p""]");
+                        var novelp = nodenovelp == null ? null : nodenovelp.InnerText;
+
+                        var nodenovelh = htmlDoc.DocumentNode.SelectSingleNode(@"//div[@id=""novel_honbun""]");
+                        var novelh = nodenovelh == null ? null : nodenovelh.InnerText;
+                        if (novelh != null)
+                        {
+                            var novelsplit = novelh.Split('\n');
+
+                            for (var i = 0; i < novelsplit.Length; i++)
+                            {
+                                sw.Write(novelsplit[i]);
+                            }
+                        }
+
+                        var nodenovela = htmlDoc.DocumentNode.SelectSingleNode(@"//div[@id=""novel_a""]");
+                        var novela = nodenovela == null ? null : nodenovela.InnerText;
+                    }
+                }
+            }
+
+            MessageBox.Show(Resources.Msg_Finish,
+                Resources.Msg_Information,
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void writeFile()
+        private string createProjectDirPath()
         {
-            var sw = new StreamWriter(@"C:\test\1.txt", false, Encoding.GetEncoding("shift_jis"));
-            //TextBox1.Textの内容を書き込む
-            sw.Write("");
-            //閉じる
-            sw.Close();
+            var projectDirPath = "";
+            if (File.Exists("ProjectDirPath.txt"))
+            {
+                using (var sr = new StreamReader("ProjectDirPath.txt"))
+                {
+                    projectDirPath = sr.ReadToEnd();
+                }
+            }
+            return projectDirPath.Replace("\r", "").Replace("\n", "");
         }
     }
 }

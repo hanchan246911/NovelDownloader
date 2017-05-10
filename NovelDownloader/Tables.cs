@@ -55,6 +55,10 @@ namespace NovelDownloader
         [Column(Name = "html", DbType = "NVARCHAR", CanBeNull = false)]
         public String Html { get; set; }
 
+        // Output
+        [Column(Name = "output", DbType = "INT", CanBeNull = true)]
+        public Boolean Output { get; set; }
+
         // Update Date
         [Column(Name = "upddate", DbType = "NVARCHAR", CanBeNull = true)]
         public String Upddate { get; set; }

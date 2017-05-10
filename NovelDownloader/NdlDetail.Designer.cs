@@ -30,31 +30,32 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NdlDetail));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.btnClearAll = new System.Windows.Forms.Button();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnSelectAll = new System.Windows.Forms.Button();
+            this.btnClearAll = new System.Windows.Forms.Button();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnGetNovel = new System.Windows.Forms.Button();
+            this.btnFileOutput = new System.Windows.Forms.Button();
+            this.btnSetting = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.chkselect = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.title = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.upddate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.regdate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnGetNovel = new System.Windows.Forms.Button();
-            this.btnFileOutput = new System.Windows.Forms.Button();
-            this.btnSetting = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -71,12 +72,25 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dataGridView1);
             // 
-            // btnClearAll
+            // splitContainer2
             // 
-            resources.ApplyResources(this.btnClearAll, "btnClearAll");
-            this.btnClearAll.Name = "btnClearAll";
-            this.btnClearAll.UseVisualStyleBackColor = true;
-            this.btnClearAll.Click += new System.EventHandler(this.btnClearAll_Click);
+            resources.ApplyResources(this.splitContainer2, "splitContainer2");
+            this.splitContainer2.Name = "splitContainer2";
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.flowLayoutPanel1);
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.flowLayoutPanel2);
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.btnSelectAll);
+            this.flowLayoutPanel1.Controls.Add(this.btnClearAll);
+            resources.ApplyResources(this.flowLayoutPanel1, "flowLayoutPanel1");
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             // 
             // btnSelectAll
             // 
@@ -84,6 +98,40 @@
             this.btnSelectAll.Name = "btnSelectAll";
             this.btnSelectAll.UseVisualStyleBackColor = true;
             this.btnSelectAll.Click += new System.EventHandler(this.btnSelectAll_Click);
+            // 
+            // btnClearAll
+            // 
+            resources.ApplyResources(this.btnClearAll, "btnClearAll");
+            this.btnClearAll.Name = "btnClearAll";
+            this.btnClearAll.UseVisualStyleBackColor = true;
+            this.btnClearAll.Click += new System.EventHandler(this.btnClearAll_Click);
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.Controls.Add(this.btnSave);
+            this.flowLayoutPanel2.Controls.Add(this.btnGetNovel);
+            this.flowLayoutPanel2.Controls.Add(this.btnFileOutput);
+            this.flowLayoutPanel2.Controls.Add(this.btnSetting);
+            resources.ApplyResources(this.flowLayoutPanel2, "flowLayoutPanel2");
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            // 
+            // btnGetNovel
+            // 
+            resources.ApplyResources(this.btnGetNovel, "btnGetNovel");
+            this.btnGetNovel.Name = "btnGetNovel";
+            this.btnGetNovel.UseVisualStyleBackColor = true;
+            // 
+            // btnFileOutput
+            // 
+            resources.ApplyResources(this.btnFileOutput, "btnFileOutput");
+            this.btnFileOutput.Name = "btnFileOutput";
+            this.btnFileOutput.UseVisualStyleBackColor = true;
+            // 
+            // btnSetting
+            // 
+            resources.ApplyResources(this.btnSetting, "btnSetting");
+            this.btnSetting.Name = "btnSetting";
+            this.btnSetting.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
@@ -130,51 +178,12 @@
             this.regdate.Name = "regdate";
             this.regdate.ReadOnly = true;
             // 
-            // splitContainer2
+            // btnSave
             // 
-            resources.ApplyResources(this.splitContainer2, "splitContainer2");
-            this.splitContainer2.Name = "splitContainer2";
-            // 
-            // splitContainer2.Panel1
-            // 
-            this.splitContainer2.Panel1.Controls.Add(this.flowLayoutPanel1);
-            // 
-            // splitContainer2.Panel2
-            // 
-            this.splitContainer2.Panel2.Controls.Add(this.flowLayoutPanel2);
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.btnSelectAll);
-            this.flowLayoutPanel1.Controls.Add(this.btnClearAll);
-            resources.ApplyResources(this.flowLayoutPanel1, "flowLayoutPanel1");
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            // 
-            // flowLayoutPanel2
-            // 
-            this.flowLayoutPanel2.Controls.Add(this.btnGetNovel);
-            this.flowLayoutPanel2.Controls.Add(this.btnFileOutput);
-            this.flowLayoutPanel2.Controls.Add(this.btnSetting);
-            resources.ApplyResources(this.flowLayoutPanel2, "flowLayoutPanel2");
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            // 
-            // btnGetNovel
-            // 
-            resources.ApplyResources(this.btnGetNovel, "btnGetNovel");
-            this.btnGetNovel.Name = "btnGetNovel";
-            this.btnGetNovel.UseVisualStyleBackColor = true;
-            // 
-            // btnFileOutput
-            // 
-            resources.ApplyResources(this.btnFileOutput, "btnFileOutput");
-            this.btnFileOutput.Name = "btnFileOutput";
-            this.btnFileOutput.UseVisualStyleBackColor = true;
-            // 
-            // btnSetting
-            // 
-            resources.ApplyResources(this.btnSetting, "btnSetting");
-            this.btnSetting.Name = "btnSetting";
-            this.btnSetting.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.btnSave, "btnSave");
+            this.btnSave.Name = "btnSave";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // NdlDetail
             // 
@@ -189,13 +198,13 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -216,5 +225,6 @@
         private System.Windows.Forms.Button btnGetNovel;
         private System.Windows.Forms.Button btnFileOutput;
         private System.Windows.Forms.Button btnSetting;
+        private System.Windows.Forms.Button btnSave;
     }
 }

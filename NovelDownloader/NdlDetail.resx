@@ -196,7 +196,7 @@
     <value>0, 0</value>
   </data>
   <data name="flowLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>284, 28</value>
+    <value>340, 28</value>
   </data>
   <data name="flowLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -228,8 +228,32 @@
   <data name="splitContainer2.Panel1MinSize" type="System.Int32, mscorlib">
     <value>164</value>
   </data>
+  <data name="btnSave.Location" type="System.Drawing.Point, System.Drawing">
+    <value>369, 3</value>
+  </data>
+  <data name="btnSave.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="btnSave.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="btnSave.Text" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="&gt;&gt;btnSave.Name" xml:space="preserve">
+    <value>btnSave</value>
+  </data>
+  <data name="&gt;&gt;btnSave.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnSave.Parent" xml:space="preserve">
+    <value>flowLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;btnSave.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="btnGetNovel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>293, 3</value>
+    <value>288, 3</value>
   </data>
   <data name="btnGetNovel.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -250,10 +274,10 @@
     <value>flowLayoutPanel2</value>
   </data>
   <data name="&gt;&gt;btnGetNovel.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="btnFileOutput.Location" type="System.Drawing.Point, System.Drawing">
-    <value>212, 3</value>
+    <value>207, 3</value>
   </data>
   <data name="btnFileOutput.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -274,10 +298,10 @@
     <value>flowLayoutPanel2</value>
   </data>
   <data name="&gt;&gt;btnFileOutput.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="btnSetting.Location" type="System.Drawing.Point, System.Drawing">
-    <value>131, 3</value>
+    <value>126, 3</value>
   </data>
   <data name="btnSetting.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -298,7 +322,7 @@
     <value>flowLayoutPanel2</value>
   </data>
   <data name="&gt;&gt;btnSetting.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="flowLayoutPanel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -310,7 +334,7 @@
     <value>0, 0</value>
   </data>
   <data name="flowLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>371, 28</value>
+    <value>447, 28</value>
   </data>
   <data name="flowLayoutPanel2.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -343,10 +367,10 @@
     <value>246</value>
   </data>
   <data name="splitContainer2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>659, 28</value>
+    <value>791, 28</value>
   </data>
   <data name="splitContainer2.SplitterDistance" type="System.Int32, mscorlib">
-    <value>284</value>
+    <value>340</value>
   </data>
   <data name="splitContainer2.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -424,7 +448,7 @@
     <value>2, 2, 2, 2</value>
   </data>
   <data name="dataGridView1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>659, 468</value>
+    <value>791, 468</value>
   </data>
   <data name="dataGridView1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -454,7 +478,7 @@
     <value>1</value>
   </data>
   <data name="splitContainer1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>659, 500</value>
+    <value>791, 500</value>
   </data>
   <data name="splitContainer1.SplitterDistance" type="System.Int32, mscorlib">
     <value>28</value>
@@ -481,7 +505,7 @@
     <value>6, 12</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>659, 500</value>
+    <value>791, 500</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Detail</value>

@@ -3,6 +3,9 @@ using System.Data.SQLite;
 using System.Linq;
 using System.Xml.Linq;
 using System.Windows.Forms;
+using System.Data.Linq;
+using System.Data;
+using NovelDownloader.Properties;
 
 namespace NovelDownloader
 {
@@ -29,7 +32,7 @@ namespace NovelDownloader
                 foreach (var subtitle in subtitles)
                 {
                     this.dataGridView1.Rows.Add(
-                        false,
+                        subtitle.Output,
                         subtitle.Id,
                         subtitle.Title,
                         subtitle.Upddate,
@@ -48,6 +51,46 @@ namespace NovelDownloader
         {
             var dg = dataGridView1.Rows.Cast<DataGridViewRow>();
             dg.AsEnumerable().Select(r => r.Cells["chkselect"].Value = false).ToList();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            using (var cn = NdlDbMng.getConnection())
+            {
+                using (var cnt = NdlDbMng.getConttext(cn))
+                {
+                    try
+                    {
+                        cn.Open();
+                        cnt.Transaction = cn.BeginTransaction();
+
+                        var dgl = dataGridView1.Rows.Cast<DataGridViewRow>();
+                        foreach (var dgr in dgl)
+                        {
+                            Table<Subtitle> subtitles = cnt.GetTable<Subtitle>();
+                            var rec = (from a in subtitles
+                                       where a.Novelid == this.novelid && a.Id == int.Parse(dgr.Cells["id"].Value.ToString())
+                                       select a).SingleOrDefault();
+
+                            rec.Output = (bool)dgr.Cells["chkselect"].Value;
+                        }
+                        cnt.SubmitChanges();
+                        cnt.Transaction.Commit();
+
+                        MessageBox.Show(Resources.Msg_Finish,
+                            Resources.Msg_Information,
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch
+                    {
+                        cnt.Transaction.Rollback();
+                    } finally
+                    {
+                        if (cn.State == ConnectionState.Open)
+                            cn.Close();
+                    }
+                }
+            }
         }
     }
 }
