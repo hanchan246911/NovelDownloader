@@ -67,4 +67,60 @@ namespace NovelDownloader
         [Column(Name = "regdate", DbType = "NVARCHAR", CanBeNull = true)]
         public String Regdate { get; set; }
     }
+
+    [Table(Name = "NovelSettings")]
+    public class Novelsetting
+    {
+        // novel id
+        [Column(Name = "novelid", DbType = "INT", IsPrimaryKey = true)]
+        public int Novelid { get; set; }
+
+        // subtitleheading
+        [Column(Name = "subtitleheading", DbType = "INT")]
+        public Boolean Subtitleheading { get; set; }
+
+        // indentation
+        [Column(Name = "indentation", DbType = "INT")]
+        public Boolean Indentation { get; set; }
+
+        // oneblanklinedel
+        [Column(Name = "oneblanklinedel", DbType = "INT")]
+        public Boolean Oneblanklinedel { get; set; }
+
+        // multiblanklinedel
+        [Column(Name = "multiblanklinedel", DbType = "INT")]
+        public int Multiblanklinedel { get; set; }
+
+        // replacestring
+        [Column(Name = "replacestring", DbType = "INT")]
+        public Boolean Replacestring { get; set; }
+
+        // Reg Date
+        [Column(Name = "regdate", DbType = "NVARCHAR", CanBeNull = true)]
+        public String Regdate { get; set; }
+    }
+
+    [Table(Name = "ReplaceSettings")]
+    public class Replacesetting
+    {
+        // id
+        [Column(Name = "id", DbType = "INT", IsPrimaryKey = true)]
+        public int Id { get; set; }
+
+        // novel id
+        [Column(Name = "novelid", DbType = "INT", IsPrimaryKey = true)]
+        public int Novelid { get; set; }
+
+        // Replace From
+        [Column(Name = "replacefrom", DbType = "NVARCHAR", CanBeNull = true)]
+        public String Replacefrom { get; set; }
+
+        // Replace To
+        [Column(Name = "replaceto", DbType = "NVARCHAR", CanBeNull = true)]
+        public String Replaceto { get; set; }
+
+        // Reg Date
+        [Column(Name = "regdate", DbType = "NVARCHAR", CanBeNull = true)]
+        public String Regdate { get; set; }
+    }
 }

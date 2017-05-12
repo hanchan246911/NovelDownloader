@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using NovelDownloader.Properties;
 using System.IO;
 using System.Text;
+using System.Collections.Generic;
 
 namespace NovelDownloader
 {
@@ -116,12 +117,22 @@ namespace NovelDownloader
                 File.Delete(filepath);
             }
 
-            using (var sw = new StreamWriter(filepath, true, Encoding.GetEncoding("shift_jis")))
+//            using (var sw = new StreamWriter(filepath, true, Encoding.GetEncoding("shift_jis")))
+            using (var sw = new StreamWriter(filepath, true, Encoding.GetEncoding("utf-8")))
             {
                 using (var aConnection = NdlDbMng.getConnection())
                 {
-                    var novelid = NdlDbMng.getNovelId(ncode, aConnection);
-                    var subtitles = NdlDbMng.getSubTitleByNovelId(novelid, aConnection);
+                    var novelists = NdlDbMng.getNovelList(ncode, aConnection);
+                    var subtitles = NdlDbMng.getSubTitleByNovelId((int)novelists.Id, aConnection);
+                    var novelsettings = NdlDbMng.getNovelSetting((int)novelists.Id, aConnection);
+                    var replacesettings = NdlDbMng.getReplaceSetting((int)novelists.Id, aConnection);
+                    var repflg = novelsettings.Replacestring;
+
+                    var title = repflg ? repNStr(novelists.Title, replacesettings) : novelists.Title;
+                    sw.WriteLine(title);
+                    var writername = repflg ? repNStr(novelists.Writername, replacesettings) : novelists.Writername;
+                    sw.WriteLine(writername);
+                    sw.WriteLine("");
 
                     foreach (var subtitle in subtitles)
                     {
@@ -131,7 +142,12 @@ namespace NovelDownloader
                         var htmlDoc = new HtmlAgilityPack.HtmlDocument();
                         htmlDoc.LoadHtml(subtitle.Html);
 
-                        sw.Write(subtitle.Title);
+                        var repsubtitle = repflg ? repNStr(subtitle.Title, replacesettings) : subtitle.Title;
+                        if (novelsettings.Subtitleheading)
+                            sw.WriteLine("［＃５字下げ］" + repsubtitle + "［＃「" + repsubtitle + "」は中見出し］");
+                        else
+                            sw.WriteLine(repsubtitle);
+                        sw.WriteLine("");
 
                         var nodenovelp = htmlDoc.DocumentNode.SelectSingleNode(@"//div[@id=""novel_p""]");
                         var novelp = nodenovelp == null ? null : nodenovelp.InnerText;
@@ -140,12 +156,53 @@ namespace NovelDownloader
                         var novelh = nodenovelh == null ? null : nodenovelh.InnerText;
                         if (novelh != null)
                         {
+                            novelh = repflg ? repNStr(novelh, replacesettings) : novelh;
                             var novelsplit = novelh.Split('\n');
 
                             for (var i = 0; i < novelsplit.Length; i++)
                             {
-                                sw.Write(novelsplit[i]);
+
+                                var s = "";
+                                var n = "";
+                                var u = getNovelSplitAddLine(novelsplit, i, -1);
+                                if (novelsettings.Multiblanklinedel == 0)
+                                {
+                                    s = getNovelSplitAddLine(novelsplit, i, 0);
+                                    n = getNovelSplitAddLine(novelsplit, i, 1);
+                                } else
+                                {
+                                    var mlflg = true;
+                                    var recs = new string[novelsettings.Multiblanklinedel + 1];
+                                    for (var j = 0; j < recs.Length; j++)
+                                    {
+                                        recs[j] = getNovelSplitAddLine(novelsplit, i, j);
+
+                                        if (!String.IsNullOrWhiteSpace(recs[j]))
+                                            mlflg = false;
+                                    }
+                                    if (mlflg) continue;
+                                    s = recs[0];
+                                    n = recs[1];
+                                }
+
+                                if (novelsettings.Oneblanklinedel
+                                    && !String.IsNullOrWhiteSpace(u)
+                                    && String.IsNullOrWhiteSpace(s)
+                                    && !String.IsNullOrWhiteSpace(n))
+                                    continue;
+
+                                if (novelsettings.Indentation
+                                    && !String.IsNullOrWhiteSpace(s)
+                                    && !s.StartsWith("「")
+                                    && !s.StartsWith("『")
+                                    && !s.StartsWith("〔")
+                                    && !s.StartsWith("（")
+                                    && !s.StartsWith("【"))
+                                    s = "　" + s;
+
+                                sw.WriteLine(s);
                             }
+                            sw.WriteLine("");
                         }
 
                         var nodenovela = htmlDoc.DocumentNode.SelectSingleNode(@"//div[@id=""novel_a""]");
@@ -159,6 +216,32 @@ namespace NovelDownloader
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        private string getNovelSplitAddLine(string[] novelsplit, int nowline, int addline)
+        {
+            var result = "";
+            if ((addline > 0 && nowline < novelsplit.Length - addline)
+               || (addline < 0 && nowline + addline >= 0)
+               || (addline == 0))
+            {
+                result = novelsplit[nowline + addline];
+                if (!String.IsNullOrEmpty(result))
+                    result = result.Trim();
+            }
+            return result;
+        }
+ 
+        private string repNStr(string pre, List<Replacesetting> replasesetting)
+        {
+            if (String.IsNullOrEmpty(pre))
+                return pre;
+
+            var result = pre;
+            foreach (var rep in replasesetting)
+            {
+                result = result.Replace(rep.Replacefrom, rep.Replaceto);
+            }
+            return result;
+        }
         private string createProjectDirPath()
         {
             var projectDirPath = "";

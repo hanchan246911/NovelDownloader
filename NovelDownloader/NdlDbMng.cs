@@ -151,6 +151,69 @@ namespace NovelDownloader
                     id);
             }
         }
+ 
+        static public Novellist getNovelList(string ncode)
+        {
+            return getNovelList(ncode, getConnection());
+        }
+
+        static public Novellist getNovelList(string ncode, SQLiteConnection aConnection)
+        {
+            using (var aConText = new DataContext(aConnection))
+            {
+                var novellists = aConText.GetTable<Novellist>();
+                var rec = (from a in novellists
+                           where a.Ncode == ncode
+                           select a).SingleOrDefault();
+                return rec;
+            }
+        }
+
+        static public Novellist getNovelList(int novelid)
+        {
+            return getNovelList(novelid, getConnection());
+        }
+
+        static public Novellist getNovelList(int novelid, SQLiteConnection aConnection)
+        {
+            using (var aConText = new DataContext(aConnection))
+            {
+                var novellists = aConText.GetTable<Novellist>();
+                var rec = (from a in novellists
+                           where a.Id == novelid
+                           select a).SingleOrDefault();
+                return rec;
+            }
+        }
+
+        static public Novelsetting getNovelSetting(int novelid)
+        {
+            return getNovelSetting(novelid, getConnection());
+        }
+
+        static public Novelsetting getNovelSetting(int novelid, SQLiteConnection aConnection)
+        {
+            using (var aConText = new DataContext(aConnection))
+            {
+                var novelsettings = aConText.GetTable<Novelsetting>();
+                var rec = (from a in novelsettings
+                           where a.Novelid == novelid
+                           select a).SingleOrDefault();
+                return rec;
+            }
+        }
+
+        static public List<Replacesetting> getReplaceSetting(int novelid, SQLiteConnection aConnection)
+        {
+            using (var aConText = new DataContext(aConnection))
+            {
+                var replacesettings = aConText.GetTable<Replacesetting>();
+                var rec = (from a in replacesettings
+                           where a.Novelid == novelid
+                           select a).ToList();
+                return rec;
+            }
+        }
 
         static public int getNovelId(string ncode)
         {
