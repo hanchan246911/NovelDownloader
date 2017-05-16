@@ -61,6 +61,36 @@ namespace NovelDownloader.Properties {
         }
         
         /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap img_floppydisk {
+            get {
+                object obj = ResourceManager.GetObject("img_floppydisk", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap img_interface {
+            get {
+                object obj = ResourceManager.GetObject("img_interface", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap img_new {
+            get {
+                object obj = ResourceManager.GetObject("img_new", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Detail に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Msg_Detail {
@@ -84,15 +114,6 @@ namespace NovelDownloader.Properties {
         internal static string Msg_Information {
             get {
                 return ResourceManager.GetString("Msg_Information", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Novel Downloader に類似しているローカライズされた文字列を検索します。
-        /// </summary>
-        internal static string NdlMain {
-            get {
-                return ResourceManager.GetString("NdlMain", resourceCulture);
             }
         }
     }

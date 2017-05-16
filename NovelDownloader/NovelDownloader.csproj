@@ -67,49 +67,50 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="NdlDetail.cs">
+    <Compile Include="NdlMng.cs" />
+    <Compile Include="frmNdlDetail.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NdlDetail.Designer.cs">
-      <DependentUpon>NdlDetail.cs</DependentUpon>
+    <Compile Include="frmNdlDetail.Designer.cs">
+      <DependentUpon>frmNdlDetail.cs</DependentUpon>
     </Compile>
-    <Compile Include="NdlHtmlMng.cs" />
+    <Compile Include="HtmlMng.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Tables.cs" />
-    <Compile Include="NdlDbMng.cs" />
-    <Compile Include="NdlMain.cs">
+    <Compile Include="DbMng.cs" />
+    <Compile Include="frmNdlMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NdlMain.Designer.cs">
-      <DependentUpon>NdlMain.cs</DependentUpon>
+    <Compile Include="frmNdlMain.Designer.cs">
+      <DependentUpon>frmNdlMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="NdlDetail.ja.resx">
-      <DependentUpon>NdlDetail.cs</DependentUpon>
+    <EmbeddedResource Include="frmNdlDetail.ja.resx">
+      <DependentUpon>frmNdlDetail.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NdlDetail.resx">
-      <DependentUpon>NdlDetail.cs</DependentUpon>
+    <EmbeddedResource Include="frmNdlDetail.resx">
+      <DependentUpon>frmNdlDetail.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NdlMain.en.resx">
-      <DependentUpon>NdlMain.cs</DependentUpon>
+    <EmbeddedResource Include="frmNdlMain.en.resx">
+      <DependentUpon>frmNdlMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NdlMain.ja.resx">
-      <DependentUpon>NdlMain.cs</DependentUpon>
+    <EmbeddedResource Include="frmNdlMain.ja.resx">
+      <DependentUpon>frmNdlMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NdlMain.resx">
-      <DependentUpon>NdlMain.cs</DependentUpon>
+    <EmbeddedResource Include="frmNdlMain.resx">
+      <DependentUpon>frmNdlMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.ja-JP.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="db\ndl.db" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -124,6 +125,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\img_floppydisk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\img_new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\img_interface.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

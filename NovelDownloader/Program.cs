@@ -16,7 +16,7 @@ namespace NovelDownloader
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new NdlMain());
+            Application.Run(new frmNdlMain());
         }
     }
 }
