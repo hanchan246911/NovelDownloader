@@ -13,7 +13,7 @@ namespace NovelDownloader
             var novellists = DbMng.getNovelListAll();
             foreach (var novellist in novellists)
             {
-                this.dataGridView1.Rows.Add(novellist.Id,
+                this.dgvNovelList.Rows.Add(novellist.Id,
                     novellist.Ncode,
                     novellist.Title,
                     novellist.Writername,
@@ -35,11 +35,11 @@ namespace NovelDownloader
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == this.dataGridView1.Columns["detail"].Index)
+            if (e.ColumnIndex == this.dgvNovelList.Columns["detail"].Index)
             {
                 using (var ndlDetail = new frmNdlDetail())
                 {
-                    var novelid = int.Parse(this.dataGridView1.Rows[e.RowIndex].Cells["id"].Value.ToString());
+                    var novelid = int.Parse(this.dgvNovelList.Rows[e.RowIndex].Cells["id"].Value.ToString());
                     ndlDetail.Novelid = novelid;
                     ndlDetail.ShowDialog();
                 }
@@ -58,5 +58,9 @@ namespace NovelDownloader
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        private void btnAddNew_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
