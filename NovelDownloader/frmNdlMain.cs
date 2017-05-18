@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using NovelDownloader.Properties;
+using NovelDownloader.Lib.Util;
 
 namespace NovelDownloader
 {
@@ -60,6 +61,12 @@ namespace NovelDownloader
 
         private void btnAddNew_Click(object sender, EventArgs e)
         {
+            using (var ndlnew = new frmNdlNew())
+            {
+                ndlnew.ShowDialog();
+                if (ndlnew.DialogResult == DialogResult.Cancel)
+                    MessageBox.Show("Cancel", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
 
         }
     }

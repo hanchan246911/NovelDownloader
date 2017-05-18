@@ -100,6 +100,15 @@ namespace NovelDownloader.Properties {
         }
         
         /// <summary>
+        ///   Please enter the {0} field. に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string Msg_FieldInput {
+            get {
+                return ResourceManager.GetString("Msg_FieldInput", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Finish に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Msg_Finish {
@@ -114,6 +123,15 @@ namespace NovelDownloader.Properties {
         internal static string Msg_Information {
             get {
                 return ResourceManager.GetString("Msg_Information", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Novels with ncode &quot;{0}&quot; do not exist. に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string Msg_NcodeNotFound {
+            get {
+                return ResourceManager.GetString("Msg_NcodeNotFound", resourceCulture);
             }
         }
     }

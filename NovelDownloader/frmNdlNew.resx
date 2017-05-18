@@ -117,4 +117,574 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="splitContainer2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="splitContainer2.IsSplitterFixed" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="splitContainer2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="splitContainer2.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
+    <value>Horizontal</value>
+  </data>
+  <data name="splitContainer1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="splitContainer1.IsSplitterFixed" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="splitContainer1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="lblNcode.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="lblNcode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 5</value>
+  </data>
+  <data name="lblNcode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 19</value>
+  </data>
+  <data name="lblNcode.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="lblNcode.Text" xml:space="preserve">
+    <value>ncode</value>
+  </data>
+  <data name="lblNcode.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;lblNcode.Name" xml:space="preserve">
+    <value>lblNcode</value>
+  </data>
+  <data name="&gt;&gt;lblNcode.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblNcode.Parent" xml:space="preserve">
+    <value>flowLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;lblNcode.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="txtNcode.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="txtNcode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>44, 5</value>
+  </data>
+  <data name="txtNcode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 19</value>
+  </data>
+  <data name="txtNcode.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="txtNcode.Text" xml:space="preserve">
+    <value>n5084bv</value>
+  </data>
+  <data name="&gt;&gt;txtNcode.Name" xml:space="preserve">
+    <value>txtNcode</value>
+  </data>
+  <data name="&gt;&gt;txtNcode.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtNcode.Parent" xml:space="preserve">
+    <value>flowLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;txtNcode.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnGet.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="btnGet.Location" type="System.Drawing.Point, System.Drawing">
+    <value>150, 3</value>
+  </data>
+  <data name="btnGet.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 23</value>
+  </data>
+  <data name="btnGet.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="btnGet.Text" xml:space="preserve">
+    <value>Get</value>
+  </data>
+  <data name="&gt;&gt;btnGet.Name" xml:space="preserve">
+    <value>btnGet</value>
+  </data>
+  <data name="&gt;&gt;btnGet.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnGet.Parent" xml:space="preserve">
+    <value>flowLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;btnGet.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="btnClear.Location" type="System.Drawing.Point, System.Drawing">
+    <value>212, 3</value>
+  </data>
+  <data name="btnClear.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 23</value>
+  </data>
+  <data name="btnClear.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="btnClear.Text" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="&gt;&gt;btnClear.Name" xml:space="preserve">
+    <value>btnClear</value>
+  </data>
+  <data name="&gt;&gt;btnClear.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnClear.Parent" xml:space="preserve">
+    <value>flowLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;btnClear.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="flowLayoutPanel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="flowLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="flowLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>276, 31</value>
+  </data>
+  <data name="flowLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel1.Name" xml:space="preserve">
+    <value>flowLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel1.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel1</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel1.Name" xml:space="preserve">
+    <value>splitContainer1.Panel1</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel1.Parent" xml:space="preserve">
+    <value>splitContainer1</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnCancel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>151, 3</value>
+  </data>
+  <data name="btnCancel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="btnCancel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="&gt;&gt;btnCancel.Name" xml:space="preserve">
+    <value>btnCancel</value>
+  </data>
+  <data name="&gt;&gt;btnCancel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnCancel.Parent" xml:space="preserve">
+    <value>flowLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;btnCancel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnSave.Location" type="System.Drawing.Point, System.Drawing">
+    <value>70, 3</value>
+  </data>
+  <data name="btnSave.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="btnSave.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="btnSave.Text" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="&gt;&gt;btnSave.Name" xml:space="preserve">
+    <value>btnSave</value>
+  </data>
+  <data name="&gt;&gt;btnSave.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnSave.Parent" xml:space="preserve">
+    <value>flowLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;btnSave.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="flowLayoutPanel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="flowLayoutPanel2.FlowDirection" type="System.Windows.Forms.FlowDirection, System.Windows.Forms">
+    <value>RightToLeft</value>
+  </data>
+  <data name="flowLayoutPanel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="flowLayoutPanel2.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>162, 0</value>
+  </data>
+  <data name="flowLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>229, 31</value>
+  </data>
+  <data name="flowLayoutPanel2.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel2.Name" xml:space="preserve">
+    <value>flowLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel2.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel2</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel2.Name" xml:space="preserve">
+    <value>splitContainer1.Panel2</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel2.Parent" xml:space="preserve">
+    <value>splitContainer1</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="splitContainer1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>509, 31</value>
+  </data>
+  <data name="splitContainer1.SplitterDistance" type="System.Int32, mscorlib">
+    <value>276</value>
+  </data>
+  <data name="splitContainer1.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Name" xml:space="preserve">
+    <value>splitContainer1</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Parent" xml:space="preserve">
+    <value>splitContainer2.Panel1</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;splitContainer2.Panel1.Name" xml:space="preserve">
+    <value>splitContainer2.Panel1</value>
+  </data>
+  <data name="&gt;&gt;splitContainer2.Panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitContainer2.Panel1.Parent" xml:space="preserve">
+    <value>splitContainer2</value>
+  </data>
+  <data name="&gt;&gt;splitContainer2.Panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="splitContainer4.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="splitContainer4.IsSplitterFixed" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="splitContainer4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="splitContainer4.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
+    <value>Horizontal</value>
+  </data>
+  <data name="txtWritername.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="txtWritername.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 62</value>
+  </data>
+  <data name="txtWritername.Size" type="System.Drawing.Size, System.Drawing">
+    <value>503, 19</value>
+  </data>
+  <data name="txtWritername.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;txtWritername.Name" xml:space="preserve">
+    <value>txtWritername</value>
+  </data>
+  <data name="&gt;&gt;txtWritername.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtWritername.Parent" xml:space="preserve">
+    <value>splitContainer4.Panel1</value>
+  </data>
+  <data name="&gt;&gt;txtWritername.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblWritername.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="lblWritername.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 40</value>
+  </data>
+  <data name="lblWritername.Size" type="System.Drawing.Size, System.Drawing">
+    <value>503, 19</value>
+  </data>
+  <data name="lblWritername.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="lblWritername.Text" xml:space="preserve">
+    <value>Writer Name</value>
+  </data>
+  <data name="lblWritername.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;lblWritername.Name" xml:space="preserve">
+    <value>lblWritername</value>
+  </data>
+  <data name="&gt;&gt;lblWritername.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblWritername.Parent" xml:space="preserve">
+    <value>splitContainer4.Panel1</value>
+  </data>
+  <data name="&gt;&gt;lblWritername.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="txtTitle.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="txtTitle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 18</value>
+  </data>
+  <data name="txtTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>503, 19</value>
+  </data>
+  <data name="txtTitle.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;txtTitle.Name" xml:space="preserve">
+    <value>txtTitle</value>
+  </data>
+  <data name="&gt;&gt;txtTitle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtTitle.Parent" xml:space="preserve">
+    <value>splitContainer4.Panel1</value>
+  </data>
+  <data name="&gt;&gt;txtTitle.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lblTitle.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="lblTitle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 0</value>
+  </data>
+  <data name="lblTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>503, 19</value>
+  </data>
+  <data name="lblTitle.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="lblTitle.Text" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="lblTitle.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;lblTitle.Name" xml:space="preserve">
+    <value>lblTitle</value>
+  </data>
+  <data name="&gt;&gt;lblTitle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblTitle.Parent" xml:space="preserve">
+    <value>splitContainer4.Panel1</value>
+  </data>
+  <data name="&gt;&gt;lblTitle.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;splitContainer4.Panel1.Name" xml:space="preserve">
+    <value>splitContainer4.Panel1</value>
+  </data>
+  <data name="&gt;&gt;splitContainer4.Panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitContainer4.Panel1.Parent" xml:space="preserve">
+    <value>splitContainer4</value>
+  </data>
+  <data name="&gt;&gt;splitContainer4.Panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblSummary.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="lblSummary.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 1</value>
+  </data>
+  <data name="lblSummary.Size" type="System.Drawing.Size, System.Drawing">
+    <value>501, 22</value>
+  </data>
+  <data name="lblSummary.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="lblSummary.Text" xml:space="preserve">
+    <value>Summary</value>
+  </data>
+  <data name="lblSummary.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;lblSummary.Name" xml:space="preserve">
+    <value>lblSummary</value>
+  </data>
+  <data name="&gt;&gt;lblSummary.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblSummary.Parent" xml:space="preserve">
+    <value>splitContainer4.Panel2</value>
+  </data>
+  <data name="&gt;&gt;lblSummary.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="txtSummary.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="txtSummary.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 26</value>
+  </data>
+  <data name="txtSummary.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="txtSummary.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+    <value>Vertical</value>
+  </data>
+  <data name="txtSummary.Size" type="System.Drawing.Size, System.Drawing">
+    <value>503, 335</value>
+  </data>
+  <data name="txtSummary.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;txtSummary.Name" xml:space="preserve">
+    <value>txtSummary</value>
+  </data>
+  <data name="&gt;&gt;txtSummary.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtSummary.Parent" xml:space="preserve">
+    <value>splitContainer4.Panel2</value>
+  </data>
+  <data name="&gt;&gt;txtSummary.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;splitContainer4.Panel2.Name" xml:space="preserve">
+    <value>splitContainer4.Panel2</value>
+  </data>
+  <data name="&gt;&gt;splitContainer4.Panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitContainer4.Panel2.Parent" xml:space="preserve">
+    <value>splitContainer4</value>
+  </data>
+  <data name="&gt;&gt;splitContainer4.Panel2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="splitContainer4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>509, 452</value>
+  </data>
+  <data name="splitContainer4.SplitterDistance" type="System.Int32, mscorlib">
+    <value>84</value>
+  </data>
+  <data name="splitContainer4.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;splitContainer4.Name" xml:space="preserve">
+    <value>splitContainer4</value>
+  </data>
+  <data name="&gt;&gt;splitContainer4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitContainer4.Parent" xml:space="preserve">
+    <value>splitContainer2.Panel2</value>
+  </data>
+  <data name="&gt;&gt;splitContainer4.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;splitContainer2.Panel2.Name" xml:space="preserve">
+    <value>splitContainer2.Panel2</value>
+  </data>
+  <data name="&gt;&gt;splitContainer2.Panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitContainer2.Panel2.Parent" xml:space="preserve">
+    <value>splitContainer2</value>
+  </data>
+  <data name="&gt;&gt;splitContainer2.Panel2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="splitContainer2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>509, 487</value>
+  </data>
+  <data name="splitContainer2.SplitterDistance" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="splitContainer2.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;splitContainer2.Name" xml:space="preserve">
+    <value>splitContainer2</value>
+  </data>
+  <data name="&gt;&gt;splitContainer2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitContainer2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;splitContainer2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 12</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>509, 487</value>
+  </data>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>458, 38</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>New novel registration screen</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>frmNdlNew</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

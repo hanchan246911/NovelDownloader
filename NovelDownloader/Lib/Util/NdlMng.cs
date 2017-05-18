@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace NovelDownloader
+namespace NovelDownloader.Lib.Util
 {
     class NdlMng
     {

@@ -5,7 +5,7 @@ using System.Data.SQLite;
 using System.IO;
 using System.Collections.Generic;
 
-namespace NovelDownloader
+namespace NovelDownloader.Lib.Util
 {
     class DbMng
     {

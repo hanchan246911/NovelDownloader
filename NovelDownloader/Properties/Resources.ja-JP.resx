@@ -120,10 +120,16 @@
   <data name="Msg_Detail" xml:space="preserve">
     <value>詳細</value>
   </data>
+  <data name="Msg_FieldInput" xml:space="preserve">
+    <value>{0}項目を入力してください。</value>
+  </data>
   <data name="Msg_Finish" xml:space="preserve">
     <value>終了</value>
   </data>
   <data name="Msg_Information" xml:space="preserve">
     <value>情報</value>
+  </data>
+  <data name="Msg_NcodeNotFound" xml:space="preserve">
+    <value>ncode「{0}」の小説は存在しません。</value>
   </data>
 </root>

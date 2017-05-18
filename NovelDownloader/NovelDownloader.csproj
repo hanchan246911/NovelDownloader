@@ -73,21 +73,21 @@
     <Compile Include="frmNdlNew.Designer.cs">
       <DependentUpon>frmNdlNew.cs</DependentUpon>
     </Compile>
-    <Compile Include="NdlMng.cs" />
+    <Compile Include="Lib\Util\NdlMng.cs" />
     <Compile Include="frmNdlDetail.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmNdlDetail.Designer.cs">
       <DependentUpon>frmNdlDetail.cs</DependentUpon>
     </Compile>
-    <Compile Include="HtmlMng.cs" />
+    <Compile Include="Lib\Util\HtmlMng.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Tables.cs" />
-    <Compile Include="DbMng.cs" />
+    <Compile Include="Lib\Util\DbMng.cs" />
     <Compile Include="frmNdlMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +110,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmNdlMain.resx">
       <DependentUpon>frmNdlMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNdlNew.ja.resx">
+      <DependentUpon>frmNdlNew.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmNdlNew.resx">
       <DependentUpon>frmNdlNew.cs</DependentUpon>

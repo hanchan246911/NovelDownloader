@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Data.SQLite;
 using System.Linq;
-using System.Xml.Linq;
 using System.Windows.Forms;
 using System.Data.Linq;
 using System.Data;
 using NovelDownloader.Properties;
+using NovelDownloader.Lib.Util;
 
 namespace NovelDownloader
 {

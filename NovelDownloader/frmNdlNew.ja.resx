@@ -117,29 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Msg_Finish" xml:space="preserve">
-    <value>Finish</value>
+  <data name="lblWritername.Text" xml:space="preserve">
+    <value>作者名</value>
   </data>
-  <data name="Msg_Information" xml:space="preserve">
-    <value>Information</value>
+  <data name="lblTitle.Text" xml:space="preserve">
+    <value>タイトル</value>
   </data>
-  <data name="Msg_Detail" xml:space="preserve">
-    <value>Detail</value>
+  <data name="lblSummary.Text" xml:space="preserve">
+    <value>あらすじ</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="img_floppydisk" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\img_floppydisk.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btnGet.Text" xml:space="preserve">
+    <value>取得</value>
   </data>
-  <data name="img_interface" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\img_interface.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btnClear.Text" xml:space="preserve">
+    <value>クリア</value>
   </data>
-  <data name="img_new" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\img_new.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>キャンセル</value>
   </data>
-  <data name="Msg_FieldInput" xml:space="preserve">
-    <value>Please enter the {0} field.</value>
+  <data name="btnSave.Text" xml:space="preserve">
+    <value>保存</value>
   </data>
-  <data name="Msg_NcodeNotFound" xml:space="preserve">
-    <value>Novels with ncode "{0}" do not exist.</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>新規小説登録画面</value>
   </data>
 </root>

@@ -1,8 +1,9 @@
 ﻿using System.IO;
+using System.Linq;
 using System.Net;
 using System.Text;
 
-namespace NovelDownloader
+namespace NovelDownloader.Lib.Util
 {
     class HtmlMng
     {
@@ -17,9 +18,12 @@ namespace NovelDownloader
 
         public static string getNovel(string ncode, string page)
         {
-            // return testFileLoad(ncode, page);
+#if DEBUG
+            return testFileLoad(ncode, page);
+#else
             var url = NOVEL_URL + (page == null ? ncode : ncode + DIV + page) + DIV;
             return getHTML(url);
+#endif
         }
 
         static string getHTML(string url)
@@ -62,6 +66,44 @@ namespace NovelDownloader
                 }
             }
             return result;
+        }
+ 
+        public static string getNovelTitle(string html)
+        {
+            var htmlDoc = new HtmlAgilityPack.HtmlDocument();
+            htmlDoc.LoadHtml(html);
+
+            return htmlDoc.DocumentNode
+                        .SelectNodes(@"//p[@class=""novel_title""]")
+                        .Select(a => a.InnerText.Trim())
+                        .SingleOrDefault();
+        }
+
+        public static string getNovelSummary(string html)
+        {
+            var htmlDoc = new HtmlAgilityPack.HtmlDocument();
+            htmlDoc.LoadHtml(html);
+
+            var ret = htmlDoc.DocumentNode
+                        .SelectNodes(@"//div[@id=""novel_ex""]")
+                        .Select(a => a.InnerText.Trim())
+                        .SingleOrDefault();
+            if (!System.String.IsNullOrWhiteSpace(ret))
+            {
+                ret = ret.Replace("\n", "\r\n");
+            }
+            return ret;
+        }
+
+        public static string getNovelWriterName(string html)
+        {
+            var htmlDoc = new HtmlAgilityPack.HtmlDocument();
+            htmlDoc.LoadHtml(html);
+
+            return htmlDoc.DocumentNode
+                        .SelectNodes(@"//div[@class=""novel_writername""]")
+                        .Select(a => a.InnerText.Trim())
+                        .SingleOrDefault().Substring(3);
         }
 
         private static string createProjectDirPath()

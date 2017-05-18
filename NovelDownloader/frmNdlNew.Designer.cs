@@ -28,156 +28,220 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNdlNew));
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.lblSummary = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.lblTitle = new System.Windows.Forms.Label();
-            this.btnClear = new System.Windows.Forms.Button();
-            this.btnGet = new System.Windows.Forms.Button();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.lblNcode = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.txtNcode = new System.Windows.Forms.TextBox();
+            this.btnGet = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.splitContainer4 = new System.Windows.Forms.SplitContainer();
+            this.txtWritername = new System.Windows.Forms.TextBox();
+            this.lblWritername = new System.Windows.Forms.Label();
+            this.txtTitle = new System.Windows.Forms.TextBox();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.lblSummary = new System.Windows.Forms.Label();
+            this.txtSummary = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
+            this.splitContainer2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.flowLayoutPanel1.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).BeginInit();
+            this.splitContainer4.Panel1.SuspendLayout();
+            this.splitContainer4.Panel2.SuspendLayout();
+            this.splitContainer4.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // splitContainer2
+            // 
+            resources.ApplyResources(this.splitContainer2, "splitContainer2");
+            this.splitContainer2.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.splitContainer2.Name = "splitContainer2";
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.splitContainer1);
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.splitContainer4);
             // 
             // splitContainer1
             // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            resources.ApplyResources(this.splitContainer1, "splitContainer1");
+            this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.textBox3);
-            this.splitContainer1.Panel1.Controls.Add(this.lblSummary);
-            this.splitContainer1.Panel1.Controls.Add(this.textBox2);
-            this.splitContainer1.Panel1.Controls.Add(this.lblTitle);
-            this.splitContainer1.Panel1.Controls.Add(this.btnClear);
-            this.splitContainer1.Panel1.Controls.Add(this.btnGet);
-            this.splitContainer1.Panel1.Controls.Add(this.lblNcode);
-            this.splitContainer1.Panel1.Controls.Add(this.textBox1);
+            this.splitContainer1.Panel1.Controls.Add(this.flowLayoutPanel1);
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.dataGridView1);
-            this.splitContainer1.Size = new System.Drawing.Size(686, 450);
-            this.splitContainer1.SplitterDistance = 279;
-            this.splitContainer1.TabIndex = 0;
+            this.splitContainer1.Panel2.Controls.Add(this.flowLayoutPanel2);
             // 
-            // textBox3
+            // flowLayoutPanel1
             // 
-            this.textBox3.Location = new System.Drawing.Point(10, 164);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(262, 189);
-            this.textBox3.TabIndex = 7;
-            // 
-            // lblSummary
-            // 
-            this.lblSummary.AutoSize = true;
-            this.lblSummary.Location = new System.Drawing.Point(8, 149);
-            this.lblSummary.Name = "lblSummary";
-            this.lblSummary.Size = new System.Drawing.Size(52, 12);
-            this.lblSummary.TabIndex = 6;
-            this.lblSummary.Text = "Summary";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(10, 58);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(262, 78);
-            this.textBox2.TabIndex = 5;
-            // 
-            // lblTitle
-            // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Location = new System.Drawing.Point(15, 43);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(28, 12);
-            this.lblTitle.TabIndex = 4;
-            this.lblTitle.Text = "Title";
-            // 
-            // btnClear
-            // 
-            this.btnClear.Location = new System.Drawing.Point(216, 5);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(56, 23);
-            this.btnClear.TabIndex = 3;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = true;
-            // 
-            // btnGet
-            // 
-            this.btnGet.AutoSize = true;
-            this.btnGet.Location = new System.Drawing.Point(155, 5);
-            this.btnGet.Name = "btnGet";
-            this.btnGet.Size = new System.Drawing.Size(56, 23);
-            this.btnGet.TabIndex = 2;
-            this.btnGet.Text = "Get";
-            this.btnGet.UseVisualStyleBackColor = true;
+            this.flowLayoutPanel1.Controls.Add(this.lblNcode);
+            this.flowLayoutPanel1.Controls.Add(this.txtNcode);
+            this.flowLayoutPanel1.Controls.Add(this.btnGet);
+            this.flowLayoutPanel1.Controls.Add(this.btnClear);
+            resources.ApplyResources(this.flowLayoutPanel1, "flowLayoutPanel1");
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             // 
             // lblNcode
             // 
-            this.lblNcode.AutoSize = true;
-            this.lblNcode.Location = new System.Drawing.Point(8, 10);
+            resources.ApplyResources(this.lblNcode, "lblNcode");
             this.lblNcode.Name = "lblNcode";
-            this.lblNcode.Size = new System.Drawing.Size(35, 12);
-            this.lblNcode.TabIndex = 1;
-            this.lblNcode.Text = "ncode";
-            this.lblNcode.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // textBox1
+            // txtNcode
             // 
-            this.textBox1.Location = new System.Drawing.Point(49, 7);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 19);
-            this.textBox1.TabIndex = 0;
+            resources.ApplyResources(this.txtNcode, "txtNcode");
+            this.txtNcode.Name = "txtNcode";
             // 
-            // dataGridView1
+            // btnGet
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 21;
-            this.dataGridView1.Size = new System.Drawing.Size(403, 450);
-            this.dataGridView1.TabIndex = 0;
+            resources.ApplyResources(this.btnGet, "btnGet");
+            this.btnGet.Name = "btnGet";
+            this.btnGet.UseVisualStyleBackColor = true;
+            this.btnGet.Click += new System.EventHandler(this.btnGet_Click);
+            // 
+            // btnClear
+            // 
+            resources.ApplyResources(this.btnClear, "btnClear");
+            this.btnClear.Name = "btnClear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.Controls.Add(this.btnCancel);
+            this.flowLayoutPanel2.Controls.Add(this.btnSave);
+            resources.ApplyResources(this.flowLayoutPanel2, "flowLayoutPanel2");
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            // 
+            // btnCancel
+            // 
+            resources.ApplyResources(this.btnCancel, "btnCancel");
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnSave
+            // 
+            resources.ApplyResources(this.btnSave, "btnSave");
+            this.btnSave.Name = "btnSave";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // splitContainer4
+            // 
+            resources.ApplyResources(this.splitContainer4, "splitContainer4");
+            this.splitContainer4.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.splitContainer4.Name = "splitContainer4";
+            // 
+            // splitContainer4.Panel1
+            // 
+            this.splitContainer4.Panel1.Controls.Add(this.txtWritername);
+            this.splitContainer4.Panel1.Controls.Add(this.lblWritername);
+            this.splitContainer4.Panel1.Controls.Add(this.txtTitle);
+            this.splitContainer4.Panel1.Controls.Add(this.lblTitle);
+            // 
+            // splitContainer4.Panel2
+            // 
+            this.splitContainer4.Panel2.Controls.Add(this.lblSummary);
+            this.splitContainer4.Panel2.Controls.Add(this.txtSummary);
+            // 
+            // txtWritername
+            // 
+            resources.ApplyResources(this.txtWritername, "txtWritername");
+            this.txtWritername.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtWritername.Name = "txtWritername";
+            this.txtWritername.ReadOnly = true;
+            // 
+            // lblWritername
+            // 
+            resources.ApplyResources(this.lblWritername, "lblWritername");
+            this.lblWritername.Name = "lblWritername";
+            // 
+            // txtTitle
+            // 
+            resources.ApplyResources(this.txtTitle, "txtTitle");
+            this.txtTitle.Name = "txtTitle";
+            this.txtTitle.ReadOnly = true;
+            // 
+            // lblTitle
+            // 
+            resources.ApplyResources(this.lblTitle, "lblTitle");
+            this.lblTitle.Name = "lblTitle";
+            // 
+            // lblSummary
+            // 
+            resources.ApplyResources(this.lblSummary, "lblSummary");
+            this.lblSummary.Name = "lblSummary";
+            // 
+            // txtSummary
+            // 
+            resources.ApplyResources(this.txtSummary, "txtSummary");
+            this.txtSummary.Name = "txtSummary";
+            this.txtSummary.ReadOnly = true;
             // 
             // frmNdlNew
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(686, 450);
-            this.Controls.Add(this.splitContainer1);
+            this.Controls.Add(this.splitContainer2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmNdlNew";
-            this.Text = "Form1";
+            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
+            this.splitContainer2.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
+            this.flowLayoutPanel2.ResumeLayout(false);
+            this.splitContainer4.Panel1.ResumeLayout(false);
+            this.splitContainer4.Panel1.PerformLayout();
+            this.splitContainer4.Panel2.ResumeLayout(false);
+            this.splitContainer4.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).EndInit();
+            this.splitContainer4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnGet;
         private System.Windows.Forms.Label lblNcode;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtNcode;
+        private System.Windows.Forms.TextBox txtSummary;
         private System.Windows.Forms.Label lblSummary;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.SplitContainer splitContainer2;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.SplitContainer splitContainer4;
+        private System.Windows.Forms.TextBox txtTitle;
+        private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Label lblWritername;
+        private System.Windows.Forms.TextBox txtWritername;
     }
 }
