@@ -91,6 +91,15 @@ namespace NovelDownloader.Properties {
         }
         
         /// <summary>
+        ///   The novel of ncode &quot;{0}&quot; has already been registered. に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string Msg_AlreadyBeenRegistered {
+            get {
+                return ResourceManager.GetString("Msg_AlreadyBeenRegistered", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Detail に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Msg_Detail {

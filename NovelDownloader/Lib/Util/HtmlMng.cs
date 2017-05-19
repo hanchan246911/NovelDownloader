@@ -7,9 +7,11 @@ namespace NovelDownloader.Lib.Util
 {
     class HtmlMng
     {
+#if !DEBUG
         private static string NOVEL_URL = "http://ncode.syosetu.com/";
 
         private static string DIV = "/";
+#endif
 
         public static string getNovel(string ncode)
         {
@@ -53,8 +55,7 @@ namespace NovelDownloader.Lib.Util
                 filePath = Path.Combine(projectDirPath, "tmp", ncode, ncode + ".txt");
             else
             {
-                var pageSplit = page.Split('/');
-                filePath = Path.Combine(projectDirPath, "tmp", ncode, ncode + "-" + pageSplit[2] + ".txt");
+                filePath = Path.Combine(projectDirPath, "tmp", ncode, ncode + "-" + page + ".txt");
             }
 
             if (File.Exists(filePath))
@@ -106,6 +107,36 @@ namespace NovelDownloader.Lib.Util
                         .SingleOrDefault().Substring(3);
         }
 
+        public static HtmlAgilityPack.HtmlNodeCollection getNovelSubtitleList(string html)
+        {
+            var htmlDoc = new HtmlAgilityPack.HtmlDocument();
+            htmlDoc.LoadHtml(html);
+            return htmlDoc.DocumentNode
+                    .SelectNodes(@"//div[@class=""index_box""]/dl[@class=""novel_sublist2""]");
+        }
+
+        public static Subtitle getNovelSubtitle(string ncode, string html)
+        {
+            var htmlDoc = new HtmlAgilityPack.HtmlDocument();
+            htmlDoc.LoadHtml(html);
+            var dd = htmlDoc.DocumentNode.SelectNodes(@"//dd[@class=""subtitle""]/a")
+                    .Select(x => new
+                    {
+                        Url = x.Attributes["href"].Value.Trim(),
+                        Title = x.InnerText.Trim(),
+                    }).ToList().FirstOrDefault();
+            var ret = new Subtitle();
+            ret.Url = dd.Url;
+            ret.Title = dd.Title;
+            ret.Upddate = htmlDoc.DocumentNode.SelectNodes(@"//dt[@class=""long_update""]")
+                    .Select(x => x.InnerText.Trim())
+                    .ToList().FirstOrDefault().Substring(0, 16);
+            var pageSplit = ret.Url.Split('/');
+            ret.Id = int.Parse(pageSplit[2]);
+            ret.Html = HtmlMng.getNovel(ncode, pageSplit[2]);
+            return ret;
+        }
+ 
         private static string createProjectDirPath()
         {
             var projectDirPath = "";

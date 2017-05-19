@@ -72,7 +72,24 @@ namespace NovelDownloader.Lib.Util
                 return aQueryResult;
             }
         }
- 
+
+        static public List<Subtitle> getSubTitleByNovelId(string ncode)
+        {
+            var novelid = getNovelId(ncode);
+            using (var aConnection = getConnection())
+            {
+                return getSubTitleByNovelId(novelid, aConnection);
+            }
+        }
+
+        static public List<Subtitle> getSubTitleByNovelId(int novelid)
+        {
+            using (var aConnection = getConnection())
+            {
+                return getSubTitleByNovelId(novelid, aConnection);
+            }
+        }
+
         static public List<Subtitle> getSubTitleByNovelId(int novelid, SQLiteConnection aConnection)
         {
             using (var aConText = new DataContext(aConnection))
@@ -81,6 +98,7 @@ namespace NovelDownloader.Lib.Util
                 var aQueryResult =
                         (from a in subtitles
                          where a.Novelid == novelid
+                         orderby a.Id
                          select a).ToList();
                 return aQueryResult;
             }
@@ -106,6 +124,21 @@ namespace NovelDownloader.Lib.Util
                          select a).ToList().FirstOrDefault();
                 return aQueryResult;
             }
+        }
+
+        static public bool IsNcodeExists(string ncode)
+        {
+            return getNovelId(ncode) > 0 ? true : false;
+        }
+
+        static public int addNovelList(Novellist novellst, DataContext aConText)
+        {
+            var novellists = aConText.GetTable<Novellist>();
+            novellst.Regdate = DateTime.Today.ToShortDateString() + " " + DateTime.Now.ToShortTimeString();
+            novellists.InsertOnSubmit(novellst);
+            aConText.SubmitChanges();
+
+            return getNovelId(novellst.Ncode, aConText);
         }
 
         static public int addNovelList(string ncode, string html, SQLiteConnection aConnection)
@@ -275,21 +308,33 @@ namespace NovelDownloader.Lib.Util
         {
             using (DataContext aConText = new DataContext(aConnection))
             {
-                Table<Subtitle> subtitles = aConText.GetTable<Subtitle>();
-                var rec = new Subtitle
-                {
-                    Id = id,
-                    Novelid = novelid,
-                    Title = subtitle,
-                    Url = url,
-                    Html = html,
-                    Upddate = upddate,
-                    Regdate = DateTime.Today.ToShortDateString() + " " + DateTime.Now.ToShortTimeString(),
-                };
-                subtitles.InsertOnSubmit(rec);
-                aConText.SubmitChanges();
-
+                addSubtitle(id, novelid, subtitle, url, html, upddate, aConText);
             }
+        }
+
+        static public void addSubtitle(int id, int novelid, string subtitle, string url, string html, string upddate, DataContext aConText)
+        {
+            Table<Subtitle> subtitles = aConText.GetTable<Subtitle>();
+            var rec = new Subtitle
+            {
+                Id = id,
+                Novelid = novelid,
+                Title = subtitle,
+                Url = url,
+                Html = html,
+                Upddate = upddate,
+                Regdate = DateTime.Today.ToShortDateString() + " " + DateTime.Now.ToShortTimeString(),
+            };
+            subtitles.InsertOnSubmit(rec);
+            aConText.SubmitChanges();
+        }
+
+        static public void addSubtitle(Subtitle subtitle, DataContext aConText)
+        {
+            Table<Subtitle> subtitles = aConText.GetTable<Subtitle>();
+            subtitle.Regdate = DateTime.Today.ToShortDateString() + " " + DateTime.Now.ToShortTimeString();
+            subtitles.InsertOnSubmit(subtitle);
+            aConText.SubmitChanges();
         }
 
         static private string createProjectDirPath()

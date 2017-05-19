@@ -142,4 +142,7 @@
   <data name="Msg_NcodeNotFound" xml:space="preserve">
     <value>Novels with ncode "{0}" do not exist.</value>
   </data>
+  <data name="Msg_AlreadyBeenRegistered" xml:space="preserve">
+    <value>The novel of ncode "{0}" has already been registered.</value>
+  </data>
 </root>

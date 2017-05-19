@@ -7,6 +7,9 @@ namespace NovelDownloader
 {
     public partial class frmNdlNew : Form
     {
+
+        public string Html { get; set; }
+
         public frmNdlNew()
         {
             InitializeComponent();
@@ -23,9 +26,9 @@ namespace NovelDownloader
             }
 
             var ncode = this.txtNcode.Text.Trim();
-            var html = HtmlMng.getNovel(ncode);
+            this.Html = HtmlMng.getNovel(ncode);
 
-            if (String.IsNullOrWhiteSpace(html))
+            if (String.IsNullOrWhiteSpace(Html))
             {
                 MessageBox.Show(String.Format(Resources.Msg_NcodeNotFound, ncode),
                     Resources.Msg_Information,
@@ -33,9 +36,9 @@ namespace NovelDownloader
                 return;
             }
 
-            this.txtTitle.Text = HtmlMng.getNovelTitle(html);
-            this.txtWritername.Text = HtmlMng.getNovelWriterName(html);
-            this.txtSummary.Text = HtmlMng.getNovelSummary(html);
+            this.txtTitle.Text = HtmlMng.getNovelTitle(Html);
+            this.txtWritername.Text = HtmlMng.getNovelWriterName(Html);
+            this.txtSummary.Text = HtmlMng.getNovelSummary(Html);
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -46,6 +49,49 @@ namespace NovelDownloader
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            var ncode = this.txtNcode.Text.Trim();
+            if (String.IsNullOrWhiteSpace(Html))
+            {
+                MessageBox.Show(String.Format(Resources.Msg_NcodeNotFound, ncode),
+                    Resources.Msg_Information,
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            if (DbMng.IsNcodeExists(ncode))
+            {
+                MessageBox.Show(String.Format(Resources.Msg_AlreadyBeenRegistered, ncode),
+                    Resources.Msg_Information,
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            using (var cnn = DbMng.getConnection())
+            {
+                cnn.Open();
+                cnn.ChangePassword("");
+                using (var trans = cnn.BeginTransaction())
+                {
+                    using (var context = DbMng.getConttext(cnn))
+                    {
+                        var novellist = new Novellist();
+                        novellist.Ncode = ncode;
+                        novellist.Title = this.txtTitle.Text;
+                        novellist.Writername = this.txtWritername.Text;
+                        novellist.Html = this.Html;
+                        var novelid = DbMng.addNovelList(novellist, context);
+                        var subtitles = HtmlMng.getNovelSubtitleList(this.Html);
+                        foreach (var a in subtitles)
+                        {
+                            var subtitle = HtmlMng.getNovelSubtitle(ncode, a.InnerHtml);
+                            DbMng.addSubtitle(subtitle, context);
+                        }
+                    }
+                    trans.Commit();
+                }
+                cnn.Close();
+            }
+
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
@@ -56,6 +102,7 @@ namespace NovelDownloader
             this.txtTitle.Text = "";
             this.txtWritername.Text = "";
             this.txtSummary.Text = "";
+            this.Html = "";
         }
     }
 }

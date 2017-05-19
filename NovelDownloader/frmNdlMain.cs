@@ -2,6 +2,8 @@
 using System.Windows.Forms;
 using NovelDownloader.Properties;
 using NovelDownloader.Lib.Util;
+using System.IO;
+using System.Text;
 
 namespace NovelDownloader
 {
@@ -49,7 +51,7 @@ namespace NovelDownloader
 
         private void textToolStripMenuItem_Click(object sender, EventArgs e)
         {
-//            var ncode = "n5084bv";
+            //            var ncode = "n5084bv";
             var ncode = "n5655dt";
 
             NdlMng.outputNovelText(ncode);
@@ -66,6 +68,29 @@ namespace NovelDownloader
                 ndlnew.ShowDialog();
                 if (ndlnew.DialogResult == DialogResult.Cancel)
                     MessageBox.Show("Cancel", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+        }
+
+        private void dummyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var ncode = "n5084bv";
+            var novellist = DbMng.getNovelList(ncode);
+
+            var filepath = Path.Combine(NdlMng.createProjectDirPath(), "tmp", ncode, ncode + ".txt");
+            using (var sw = new StreamWriter(filepath, false, Encoding.GetEncoding("utf-8")))
+            {
+                sw.Write(novellist.Html);
+            }
+
+            var subtitles = DbMng.getSubTitleByNovelId(ncode);
+            foreach (var subtitle in subtitles)
+            {
+                var subpath = Path.Combine(NdlMng.createProjectDirPath(), "tmp", ncode, ncode + "-" + subtitle.Id + ".txt");
+                using (var sw = new StreamWriter(subpath, false, Encoding.GetEncoding("utf-8")))
+                {
+                    sw.Write(subtitle.Html);
+                }
             }
 
         }
