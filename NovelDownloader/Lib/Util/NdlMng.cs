@@ -99,7 +99,7 @@ namespace NovelDownloader.Lib.Util
                         var htmlDoc = new HtmlAgilityPack.HtmlDocument();
                         htmlDoc.LoadHtml(subtitle.Html);
 
-                        sw.Write("［＃改丁］");
+                        sw.WriteLine("［＃改丁］");
 
                         var repsubtitle = repflg ? repNStr(subtitle.Title, replacesettings) : subtitle.Title;
                         if (novelsettings.Subtitleheading)
@@ -151,14 +151,24 @@ namespace NovelDownloader.Lib.Util
                                     && !String.IsNullOrWhiteSpace(n))
                                     continue;
 
+                                if (s.Trim().StartsWith("《"))
+                                    s = s.Replace("《", "<<").Replace("》", ">>");
+
                                 if (novelsettings.Indentation
                                     && !String.IsNullOrWhiteSpace(s)
                                     && !s.StartsWith("「")
                                     && !s.StartsWith("『")
                                     && !s.StartsWith("〔")
                                     && !s.StartsWith("（")
-                                    && !s.StartsWith("【"))
+                                    && !s.StartsWith("【")
+                                    && !s.StartsWith("<"))
                                     s = "　" + s;
+
+
+                                s = s.Replace("&quot;", @"""")
+                                        .Replace("&lt;", "<")
+                                        .Replace("&gt;", ">")
+                                        .Replace("&amp;", "&");
 
                                 sw.WriteLine(s);
                             }

@@ -57,7 +57,7 @@ namespace NovelDownloader
         {
             using (var cn = DbMng.getConnection())
             {
-                using (var cnt = DbMng.getConttext(cn))
+                using (var cnt = DbMng.getContext(cn))
                 {
                     try
                     {

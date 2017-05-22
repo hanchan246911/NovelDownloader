@@ -72,7 +72,7 @@ namespace NovelDownloader
                 cnn.ChangePassword("");
                 using (var trans = cnn.BeginTransaction())
                 {
-                    using (var context = DbMng.getConttext(cnn))
+                    using (var context = DbMng.getContext(cnn))
                     {
                         var novellist = new Novellist();
                         novellist.Ncode = ncode;
@@ -84,8 +84,10 @@ namespace NovelDownloader
                         foreach (var a in subtitles)
                         {
                             var subtitle = HtmlMng.getNovelSubtitle(ncode, a.InnerHtml);
+                            subtitle.Novelid = novelid;
                             DbMng.addSubtitle(subtitle, context);
                         }
+                        DbMng.addNewNovelSetting(novelid, context);
                     }
                     trans.Commit();
                 }

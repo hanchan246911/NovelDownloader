@@ -51,8 +51,9 @@ namespace NovelDownloader
 
         private void textToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //            var ncode = "n5084bv";
-            var ncode = "n5655dt";
+            var ncode = "xn5084bv";
+            //var ncode = "n5084bv";
+            //var ncode = "n5655dt";
 
             NdlMng.outputNovelText(ncode);
 

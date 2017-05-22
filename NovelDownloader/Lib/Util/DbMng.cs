@@ -35,12 +35,12 @@ namespace NovelDownloader.Lib.Util
             return new SQLiteConnection(getConnectionString());
         }
  
-        static public DataContext getConttext()
+        static public DataContext getContext()
         {
-            return getConttext(getConnection());
+            return getContext(getConnection());
         }
 
-        static public DataContext getConttext(SQLiteConnection aConnection)
+        static public DataContext getContext(SQLiteConnection aConnection)
         {
             return new DataContext(aConnection);
         }
@@ -334,6 +334,25 @@ namespace NovelDownloader.Lib.Util
             Table<Subtitle> subtitles = aConText.GetTable<Subtitle>();
             subtitle.Regdate = DateTime.Today.ToShortDateString() + " " + DateTime.Now.ToShortTimeString();
             subtitles.InsertOnSubmit(subtitle);
+            aConText.SubmitChanges();
+        }
+
+        static public void addNewNovelSetting(int novelid, DataContext aConText) {
+            var novelsetting = new Novelsetting();
+            novelsetting.Novelid = novelid;
+            novelsetting.Subtitleheading = true;
+            novelsetting.Indentation = true;
+            novelsetting.Oneblanklinedel = true;
+            novelsetting.Multiblanklinedel = 3;
+            novelsetting.Replacestring = false;
+            addNewNovelSetting(novelsetting, aConText);
+        }
+
+        static public void addNewNovelSetting(Novelsetting novelsetting, DataContext aConText)
+        {
+            var novelsettings = aConText.GetTable<Novelsetting>();
+            novelsetting.Regdate = DateTime.Today.ToShortDateString() + " " + DateTime.Now.ToShortTimeString();
+            novelsettings.InsertOnSubmit(novelsetting);
             aConText.SubmitChanges();
         }
 
