@@ -91,6 +91,16 @@ namespace NovelDownloader.Properties {
         }
         
         /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap img_update {
+            get {
+                object obj = ResourceManager.GetObject("img_update", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   The novel of ncode &quot;{0}&quot; has already been registered. に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Msg_AlreadyBeenRegistered {

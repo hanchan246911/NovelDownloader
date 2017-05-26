@@ -344,6 +344,8 @@ namespace NovelDownloader.Lib.Util
             novelsetting.Indentation = true;
             novelsetting.Oneblanklinedel = true;
             novelsetting.Multiblanklinedel = 3;
+            novelsetting.Preface = true;
+            novelsetting.Trailer = true;
             novelsetting.Replacestring = false;
             addNewNovelSetting(novelsetting, aConText);
         }

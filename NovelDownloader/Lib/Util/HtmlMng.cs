@@ -119,6 +119,7 @@ namespace NovelDownloader.Lib.Util
         {
             var htmlDoc = new HtmlAgilityPack.HtmlDocument();
             htmlDoc.LoadHtml(html);
+
             var dd = htmlDoc.DocumentNode.SelectNodes(@"//dd[@class=""subtitle""]/a")
                     .Select(x => new
                     {
@@ -134,6 +135,11 @@ namespace NovelDownloader.Lib.Util
             var pageSplit = ret.Url.Split('/');
             ret.Id = int.Parse(pageSplit[2]);
             ret.Html = HtmlMng.getNovel(ncode, pageSplit[2]);
+
+            var subhtmlDoc = new HtmlAgilityPack.HtmlDocument();
+            subhtmlDoc.LoadHtml(ret.Html);
+            ret.Capter = subhtmlDoc.DocumentNode.SelectNodes(@"//div[@class=""contents1""]/p[@class=""chapter_title""]")
+                .Select(x => x.InnerText).SingleOrDefault();
             return ret;
         }
  

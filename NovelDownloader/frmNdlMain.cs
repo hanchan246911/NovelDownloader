@@ -51,8 +51,8 @@ namespace NovelDownloader
 
         private void textToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var ncode = "xn5084bv";
-            //var ncode = "n5084bv";
+            //var ncode = "xn5084bv";
+            var ncode = "n5084bv";
             //var ncode = "n5655dt";
 
             NdlMng.outputNovelText(ncode);
@@ -92,6 +92,20 @@ namespace NovelDownloader
                 {
                     sw.Write(subtitle.Html);
                 }
+            }
+
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            using (var ndlUpdate = new frmNdlUpdate())
+            {
+                int selectIndex = 0;
+                foreach (DataGridViewRow r in dgvNovelList.SelectedRows)
+                    selectIndex = r.Index;
+
+                ndlUpdate.Ncode = this.dgvNovelList.Rows[selectIndex].Cells["ncode"].Value.ToString();
+                ndlUpdate.ShowDialog();
             }
 
         }

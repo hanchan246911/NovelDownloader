@@ -39,6 +39,7 @@
             this.detail = new System.Windows.Forms.DataGridViewButtonColumn();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnAddNew = new System.Windows.Forms.ToolStripButton();
+            this.btnUpdate = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.tsmiFile = new System.Windows.Forms.ToolStripMenuItem();
@@ -90,6 +91,7 @@
             this.dgvNovelList.Name = "dgvNovelList";
             this.dgvNovelList.ReadOnly = true;
             this.dgvNovelList.RowHeadersVisible = false;
+            this.dgvNovelList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvNovelList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // id
@@ -126,7 +128,8 @@
             // 
             resources.ApplyResources(this.toolStrip1, "toolStrip1");
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnAddNew});
+            this.btnAddNew,
+            this.btnUpdate});
             this.toolStrip1.Name = "toolStrip1";
             // 
             // btnAddNew
@@ -136,6 +139,14 @@
             resources.ApplyResources(this.btnAddNew, "btnAddNew");
             this.btnAddNew.Name = "btnAddNew";
             this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnUpdate.Image = global::NovelDownloader.Properties.Resources.img_update;
+            resources.ApplyResources(this.btnUpdate, "btnUpdate");
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // toolStripButton1
             // 
@@ -221,6 +232,7 @@
         private System.Windows.Forms.ToolStripContainer toolStripContainer1;
         private System.Windows.Forms.ToolStripButton btnAddNew;
         private System.Windows.Forms.ToolStripMenuItem dummyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripButton btnUpdate;
     }
 }
 

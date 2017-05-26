@@ -42,7 +42,11 @@ namespace NovelDownloader
         // Novel ID
         [Column(Name = "novelid", DbType = "INT", IsPrimaryKey = true)]
         public int Novelid { get; set; }
-        
+
+        // Capter
+        [Column(Name = "capter", DbType = "NVARCHAR", CanBeNull = true)]
+        public String Capter { get; set; }
+
         // SubTitle
         [Column(Name = "title", DbType = "NVARCHAR", CanBeNull = true)]
         public String Title { get; set; }
@@ -90,6 +94,14 @@ namespace NovelDownloader
         // multiblanklinedel
         [Column(Name = "multiblanklinedel", DbType = "INT")]
         public int Multiblanklinedel { get; set; }
+
+        // preface
+        [Column(Name = "preface", DbType = "INT")]
+        public Boolean Preface { get; set; }
+
+        // trailer
+        [Column(Name = "trailer", DbType = "INT")]
+        public Boolean Trailer { get; set; }
 
         // replacestring
         [Column(Name = "replacestring", DbType = "INT")]
